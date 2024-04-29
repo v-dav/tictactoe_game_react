@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Footer from './Footer';
+import LogoHeader from './LogoHeader';
 
 function Square({ value, onSquareClick }) {
   return <button className="square" onClick={onSquareClick}>{value}</button>;
@@ -37,7 +39,8 @@ export default function Board() {
   return (
     <>
       <div className='board'>
-      <div className='status'>{status}</div>
+        <LogoHeader />
+        <div className='status'>{status}</div>
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -53,6 +56,7 @@ export default function Board() {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
+        <Footer />
       </div>
     </>
   );
